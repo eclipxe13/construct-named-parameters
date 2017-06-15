@@ -30,11 +30,11 @@ abstract class Builder
             $reflection = new \ReflectionClass($className);
             $constructor = $reflection->getConstructor();
             $parameters = $constructor->getParameters();
-            $constructorParameters = [];
+            $buildArgs = [];
             foreach ($parameters as $parameter) {
-                $constructorParameters[$parameter->getName()] = ($parameter->isOptional()) ? $parameter->getDefaultValue() : null;
+                $buildArgs[$parameter->getName()] = ($parameter->isOptional()) ? $parameter->getDefaultValue() : null;
             }
-            $cache[$className] = $constructorParameters;
+            $cache[$className] = $buildArgs;
         }
 
         return $cache[$className];

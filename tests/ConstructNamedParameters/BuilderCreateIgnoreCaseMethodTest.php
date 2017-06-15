@@ -3,7 +3,7 @@ namespace Tests\ConstructNamedParameters;
 
 use ConstructNamedParameters\Builder;
 use PHPUnit\Framework\TestCase;
-use Tests\ConstructNamedParameters\Samples\FooWithCaseArguments as Foo;
+use Tests\ConstructNamedParameters\Samples\BarWithCaseArguments as Bar;
 use Tests\ConstructNamedParameters\Samples\SameNameDifferentCase;
 
 class BuilderCreateIgnoreCaseMethodTest extends TestCase
@@ -16,10 +16,10 @@ class BuilderCreateIgnoreCaseMethodTest extends TestCase
             'thirdArgument' => 333,
         ];
 
-        /** @var Foo $foo */
-        $foo = Builder::createIgnoreCase(Foo::class, $values);
+        /** @var Bar $foo */
+        $foo = Builder::createIgnoreCase(Bar::class, $values);
 
-        $this->assertInstanceOf(Foo::class, $foo);
+        $this->assertInstanceOf(Bar::class, $foo);
         $this->assertSame($values['firstArgument'], $foo->getFirst());
         $this->assertSame($values['secondArgument'], $foo->getSecond());
         $this->assertSame($values['thirdArgument'], $foo->getThird());
@@ -33,10 +33,10 @@ class BuilderCreateIgnoreCaseMethodTest extends TestCase
             'thirdARGUMENT' => 333,
         ];
 
-        /** @var Foo $foo */
-        $foo = Builder::createIgnoreCase(Foo::class, $values);
+        /** @var Bar $foo */
+        $foo = Builder::createIgnoreCase(Bar::class, $values);
 
-        $this->assertInstanceOf(Foo::class, $foo);
+        $this->assertInstanceOf(Bar::class, $foo);
         $this->assertSame($values['FiRsTaRgUmEnT'], $foo->getFirst());
         $this->assertSame($values['SECONDargument'], $foo->getSecond());
         $this->assertSame($values['thirdARGUMENT'], $foo->getThird());
@@ -57,10 +57,10 @@ class BuilderCreateIgnoreCaseMethodTest extends TestCase
             'thirdARGUMENT' => 333,
         ];
 
-        /** @var Foo $foo */
-        $foo = construct_named_parameters_uncase(Foo::class, $values);
+        /** @var Bar $foo */
+        $foo = construct_named_parameters_uncase(Bar::class, $values);
 
-        $this->assertInstanceOf(Foo::class, $foo);
+        $this->assertInstanceOf(Bar::class, $foo);
         $this->assertSame($values['FiRsTaRgUmEnT'], $foo->getFirst());
         $this->assertSame($values['SECONDargument'], $foo->getSecond());
         $this->assertSame($values['thirdARGUMENT'], $foo->getThird());
