@@ -11,6 +11,10 @@ matrix:
   allow_failures:
     - php: hhvm
 
+# Use trusty to run hhvm
+# https://docs.travis-ci.com/user/trusty-ci-environment/
+dist: trusty
+
 # This triggers builds to run on the new TravisCI infrastructure.
 # See: http://docs.travis-ci.com/user/workers/container-based-infrastructure/
 sudo: false
