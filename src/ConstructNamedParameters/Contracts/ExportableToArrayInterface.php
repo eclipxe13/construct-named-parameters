@@ -8,5 +8,5 @@ interface ExportableToArrayInterface
      *
      * @return array
      */
-    public static function toArray();
+    public function toArray();
 }
