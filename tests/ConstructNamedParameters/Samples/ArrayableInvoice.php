@@ -1,9 +1,10 @@
 <?php
 namespace Tests\ConstructNamedParameters\Samples;
 
+use ConstructNamedParameters\Contracts\ExportableToArrayInterface;
 use ConstructNamedParameters\Traits\ToArrayTrait;
 
-class ArrayableInvoice
+class ArrayableInvoice implements ExportableToArrayInterface
 {
     use ToArrayTrait;
 
