@@ -12,6 +12,6 @@ trait StaticCreateTrait
      */
     public static function create(array $values)
     {
-        return \ConstructNamedParameters\Builder::create(static::class, $values);
+        return construct_named_parameters(static::class, $values);
     }
 }
