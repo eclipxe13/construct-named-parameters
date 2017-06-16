@@ -1,5 +1,4 @@
 <?php
-
 namespace Tests\ConstructNamedParameters\Traits;
 
 use PHPUnit\Framework\TestCase;

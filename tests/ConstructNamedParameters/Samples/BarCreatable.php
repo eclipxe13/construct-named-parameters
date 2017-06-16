@@ -1,5 +1,4 @@
 <?php
-
 namespace Tests\ConstructNamedParameters\Samples;
 
 use ConstructNamedParameters\Traits\StaticCreateIgnoreCaseTrait;
