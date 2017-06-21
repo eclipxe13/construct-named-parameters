@@ -1,7 +1,7 @@
 <?php
 namespace ConstructNamedParameters\Traits;
 
-trait StaticCreateTrait
+trait StaticCreateIgnoreCaseTrait
 {
     /**
      * Create an instance of the current object based on named parameters
@@ -12,6 +12,6 @@ trait StaticCreateTrait
      */
     public static function create(array $values)
     {
-        return construct_named_parameters(static::class, $values);
+        return construct_named_parameters_uncase(static::class, $values);
     }
 }
